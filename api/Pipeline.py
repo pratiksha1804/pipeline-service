@@ -32,11 +32,18 @@ class Pipeline(Resource):
             return make_response(jsonify(
                 {
                     "title": "You are not authorized person",
-                    "status": HTTPStatus.OK,
+                    "status": HTTPStatus.UNAUTHORIZED,
                 }
             ),
-                HTTPStatus.OK
+                HTTPStatus.UNAUTHORIZED
             )
 
         except Exception as e:
-            return make_response("error...",e)
+            return make_response(jsonify(
+                {
+                    "title": "Error occcured",
+                    "status": HTTPStatus.BAD_REQUEST,
+                }
+            ),
+                HTTPStatus.BAD_REQUEST
+            )
