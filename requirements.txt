@@ -4,3 +4,4 @@ flask_restful_swagger==0.20.2
 flask_pymongo
 pyjwt
 flask_cors
+requests
